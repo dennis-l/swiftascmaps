@@ -3,7 +3,6 @@ Wrapper function for making color maps from lists
 of colors.
 """
 
-from matplotlib.cm import register_cmap
 from matplotlib.colors import LinearSegmentedColormap
 from typing import List, Tuple
 
@@ -76,7 +75,7 @@ def make_custom_cmap(name: str, colors: List) -> Tuple[LinearSegmentedColormap]:
         f"swift.{name}_r", list(reversed(float_colors)), N=1024
     )
 
-    register_cmap(cmap=cmap)
-    register_cmap(cmap=cmap_r)
+    matplotlib.colormaps.register(cmap=cmap)
+    matplotlib.colormaps.register(cmap=cmap_r)
 
     return cmap, cmap_r
