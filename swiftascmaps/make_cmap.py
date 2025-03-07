@@ -3,6 +3,7 @@ Wrapper function for making color maps from lists
 of colors.
 """
 
+import matplotlib
 from matplotlib.colors import LinearSegmentedColormap
 from typing import List, Tuple
 
